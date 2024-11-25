@@ -1,0 +1,210 @@
+:root {
+    /* Color Palette */
+    --color-primary: #1D3557;
+    --color-secondary: #457B9D;
+    --color-accent: #E63946;
+    --color-background: #F5F5F5;
+    --color-text: #333333;
+    --color-white: #FFFFFF;
+
+    /* Typography */
+    --font-primary: 'Open Sans', sans-serif;
+    --font-accent: 'Spinnaker', sans-serif;
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header/Hero Section */
+header {
+    position: relative;
+    background-image: url("images/vineyards.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: var(--spacing-large);
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 53, 87, 0.6);
+    z-index: 1;
+}
+
+.header-title {
+    font-family: var(--font-accent);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+.header-body {
+    width: 100%;
+    background-color: rgba(29, 53, 87, 0.8);
+    padding: var(--spacing-medium);
+    margin-top: var(--spacing-medium);
+    text-align: center;
+    position: center;
+    z-index: 2;
+}
+
+/* Activities Section */
+.activities {
+    padding: var(--spacing-large);
+    background-color: var(--color-background);
+}
+
+.adventure-headline {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-large);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.nav-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-large);
+}
+
+.activity-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-large);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.activity-images {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-secondary);
+    margin-bottom: var(--spacing-medium);
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover .activity-images {
+    transform: scale(1.05);
+}
+
+.activity-card h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-small);
+}
+
+/* Guide Section */
+.card-container {
+    padding: var(--spacing-large);
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: var(--spacing-large);
+    border: 3px solid var(--color-secondary);
+}
+
+.card-text {
+    flex: 1;
+}
+
+.guide-headline {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-medium);
+}
+
+.guide-quote {
+    font-style: italic;
+    margin-bottom: var(--spacing-medium);
+}
+
+.guide-signature {
+    text-align: right;
+    color: var(--color-secondary);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar {
+        margin-right: 0;
+        margin-bottom: var(--spacing-large);
+    }
+
+    .card-text {
+        text-align: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        color: black;
+        background: white;
+    }
+    
+    header {
+        background-image: none;
+    }
+}
