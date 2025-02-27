@@ -5,6 +5,9 @@
 
 **Community Landing Page** is a beautifully designed website showcasing local attractions, events, and information to engage the community. Built using **semantic HTML** and **CSS**, this project emphasizes accessibility, responsiveness, and modern design principles.
 
+<img width="1156" alt="Screenshot 2025-02-27 at 10 38 12 AM" src="https://github.com/user-attachments/assets/d13c15a3-3418-4524-a656-8d918238fca7" />
+
+
 ---
 
 ## 🚀 Features
